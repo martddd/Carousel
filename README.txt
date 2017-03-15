@@ -1,3 +1,6 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/martddd/pen/evWGZx.
-
- 
+Twitter:
+https://twitter.com/martddd
+Twitch:
+https://www.twitch.tv/medov_a
+YouTube:
+https://www.youtube.com/channel/UCFliCB32IW11RTwwyVYf84g
