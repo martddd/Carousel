@@ -8,74 +8,149 @@ var
       $(".crsl_list>li>img").css("height",img_h);
     },
     
+    step_id = 0,
     i = 0,
-    // anim_direction = "right",
+    j = 0,
     sec = 500,
     img_col = $("img").length,
     crsl_list = $(".crsl_list"),
     list_li = $(".crsl_list>li"),
     
-    fun_show = function(){
+    fun_show_left = function(){
         $(this).animate({opacity:1,left:0});//конечное положение анимации
         $(this).show();},
-    fun_hide = function(){
+    fun_hide_left = function(){
+      $(this).animate({opacity:0});//конечное положение анимации
+      $(this).hide();},
+    
+    fun_show_right = function(){
+        $(this).animate({opacity:1,left:0});//конечное положение анимации
+        $(this).show();},
+    fun_hide_right = function(){
       $(this).animate({opacity:0});//конечное положение анимации
       $(this).hide();},
     
     crsl_img_size = function(){
       $(".crsl_list>li>img").css("height",img_h);
-      console.log('h '+img_h+'| w '+w);
+      console.log('|w:'+w+' | h:'+img_h+"|");
       console.log();
     },
     
     crsl_hide = function(){
-      var img_col;
+      var img_mass = new Array();
+      for(a=0;a<img_col;a++){
+        img_mass.push($(".crsl_list>li")[a]);
+        console.log(img_mass[a]);
+      }
+      console.log("Массив элементов карусели");
+      console.log(img_mass);
+      console.log("-".repeat(20));
       crsl_img_size();
-      img_col = $("img").length;
       console.log('Элементов в каруселе - '+img_col);
       $(".crsl_list>li").hide();
       $(".crsl_list>li:first-child").show();
-      i++;
     },
     
-    crsl_li_show_left = function(){
+//     crsl_li_show_left = function(){
       
-      if(i<img_col){
-        console.log(i);
-        list_li.eq(i).animate({opacity:0,left:100},sec,fun_show);//начальное положение анимации
-        console.log("Показан - "+i+" элемент");
-        list_li.eq(i-1).animate({opacity:0,left:-100},sec,fun_hide);//начальное положение анимации ухода
-        console.log("Убрали - "+i+" элемент");
-        i++;
-      }else{
-        list_li.eq(i-1).animate({opacity:0,left:-100},sec,fun_hide);
-        console.log("i больше "+img_col);
-        i=0;
-        list_li.eq(i).animate({opacity:0,left:100},sec,fun_show);
-        i++;
-      }
-    },
+//       if(i<img_col){
+//         console.log(i);
+//         list_li.eq(i).animate({opacity:0,left:100},sec,fun_show_left);//начальное положение анимации
+//         console.log("Показан - "+i+" элемент");
+//         list_li.eq(i-1).animate({opacity:0,left:-100},sec,fun_hide_left);//начальное положение анимации ухода
+//         console.log("Убрали - "+i+" элемент");
+//         i++;
+//       }else{
+//         list_li.eq(i-1).animate({opacity:0,left:-100},sec,fun_hide_left);
+//         console.log("i больше "+img_col);
+//         i=0;
+//         list_li.eq(i).animate({opacity:0,left:100},sec,fun_show_left);
+//         i++;
+//       }
+//     },
 
-    crsl_li_show_right = function(){
+    // crsl_li_show_right = function(){
+    //   if(i==1){
+    //     i = img_col-1;
+    //     console.log("i равно "+i+" показываем последний элемент");
+    //     list_li.eq(i).animate({opacity:0,right:100},sec,fun_show_right);
+    //     list_li.eq(0).animate({opacity:0,right:-100},sec,fun_hide_right);
+    //     i--;
+    //      }else{
+    //        if(i<img_col){
+    //         console.log(i);
+    //         list_li.eq(i).animate({opacity:0,right:100},sec,fun_show_right);//начальное положение анимации
+    //         console.log("Показан - "+i+" элемент");
+    //         list_li.eq(i-1).animate({opacity:0,right:-100},sec,fun_hide_right);//начальное положение анимации ухода
+    //         console.log("Убрали - "+i+" элемент");
+    //         i++;
+    //       }else{
+    //         list_li.eq(i-1).animate({opacity:0,right:-100},sec,fun_hide_right);
+    //         console.log("i больше "+img_col);
+    //         i=0;
+    //         list_li.eq(i).animate({opacity:0,right:100},sec,fun_show_right);
+    //         i++;
+    //       }
+    //      }
+    // };
+    
+    crsl_li_show_left = function(){
+      console.log("#".repeat(30));
+      // console.log("Шаг: "+step_id+" - "+"Скрыть:"+i+" Показать:"+j);
+      j = i + 1;
+      list_li.eq(i).animate({opacity:0,left:-100},sec,fun_hide_right);
+      list_li.eq(j).animate({opacity:0,left:100},sec,fun_show_left);
       
-      if(i<img_col){
-        console.log(i);
-        list_li.eq(i).animate({opacity:0,right:100},sec,fun_show);//начальное положение анимации
-        console.log("Показан - "+i+" элемент");
-        list_li.eq(i-1).animate({opacity:0,right:-100},sec,fun_hide);//начальное положение анимации ухода
-        console.log("Убрали - "+i+" элемент");
-        i++;
-      }else{
-        list_li.eq(i-1).animate({opacity:0,right:-100},sec,fun_hide);
-        console.log("i больше "+img_col);
+      console.log("Шаг: "+step_id+" - "+"Скрыть:"+i+" Показать:"+j); 
+      i++;
+      console.log("#".repeat(30));
+      step_id++;
+      if(i==img_col){
+        j=0;
+        console.log("#".repeat(30));
+        list_li.eq(j).animate({opacity:0,left:100},sec,fun_show_left);
+        list_li.eq(i).animate({opacity:0,left:-100},sec,fun_hide_right); 
+        console.log("Шаг: "+step_id+" - "+"Скрыть:"+i+" Показать:"+j); 
+        console.log("#".repeat(30));
         i=0;
-        list_li.eq(i).animate({opacity:0,right:100},sec,fun_show);
-        i++;
+        step_id++;
+         }
+    },
+    
+    crsl_li_show_right = function(){
+      if(i==0){
+        j = img_col-1;
+        console.log(list_li.eq(j));
+        list_li.eq(i).animate({opacity:0,left:100},sec,fun_hide_right);
+        list_li.eq(j).animate({opacity:0,left:-100},sec,fun_show_right);
+        i = j;
+        j--;
+      }else{
+        list_li.eq(i).animate({opacity:0,left:100},sec,fun_hide_right);
+        j = i-1;
+        list_li.eq(j).animate({opacity:0,left:-100},sec,fun_show_right);
+        j--;
+        i--;
       }
     };
+    
+//     crsl_li_show_right = function(){
+//       var j = list_li.eq(i).index();
+//       if(i==1){
+//         i = img_col-1;
+//         console.log("i = " + i + " j = " + j);
+//         console.log("Надо показать "+i+" элемент");
+//         list_li.eq(i).animate({opacity:0,right:100},sec,fun_show_right);
+        
+//         console.log("Надо убрать "+j+" элемент");
+//         j--;
+//         list_li.eq(j).animate({opacity:0,right:-100},sec,fun_hide_right);
+        
+//       }
+//     };
 
 
-crsl_hide();
+$(document).ready(crsl_hide);
 
 $(".btn_left").mouseup(crsl_li_show_left);
 $(".btn_right").mouseup(crsl_li_show_right);
