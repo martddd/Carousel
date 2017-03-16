@@ -1,44 +1,7 @@
+@import '_carousel_variables.scss';
+@import '_carousel_style.scss';
+
 *{
   padding: 0;
   margin: 0;
-}
-.carusel {
-  padding: 5px 0;
-  background: #ccc;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .crsl_cont{
-    display: flex;
-    justify-content: center;
-    .crsl_list{
-      width: 100%;
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-      li{
-        position: relative;
-        display: inline;
-        img{
-          margin: 0 5px;
-          width: 650px;
-        }
-      }
-    }
-  }
-  .crsl_nav{
-    display: flex;
-    justify-content: center;
-    
-    #btn_nav {
-      margin: 3px;
-      height: 7px;
-      width: 20px;
-      background: #010;
-      opacity: .8;
-      border-radius: 20%;
-    }
-  }
 }

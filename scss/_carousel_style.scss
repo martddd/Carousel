@@ -1,0 +1,41 @@
+.carusel {
+  padding: 5px 0;
+  background: $carusel_bg;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .crsl_cont{
+    display: flex;
+    justify-content: center;
+    .crsl_list{
+      width: 100%;
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      li{
+        position: relative;
+        display: inline;
+        img{
+            border-radius: $img_border_radius;
+            margin: $img_margin_top_botton $img_margin_left_right;
+            width: $img_width;
+        }
+      }
+    }
+  }
+  .crsl_nav{
+    display: flex;
+    justify-content: center;
+    
+    #btn_nav {
+      margin: $btn_marg_top_down $btn_marg_left_right;
+      height: $btn_height;
+      width: $btn_width;
+      background: $btn_background;
+      opacity: $btn_opacity;
+      border-radius: $btn_border_radius;
+    }
+  }
+}
