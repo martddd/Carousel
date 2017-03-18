@@ -29,7 +29,12 @@
       height: 7px;
       width: 50px;
       background: #666;
-      opacity: 1;
-      border-radius: 3.5px; }
+      opacity: 0.5;
+      border-radius: 3.5px;
+      transition: 0.8s; }
+      .carusel .crsl_nav #btn_nav:hover {
+        background: #fff;
+        opacity: 1;
+        box-shadow: 1px; }
 
 /*# sourceMappingURL=carousel_main.css.map */

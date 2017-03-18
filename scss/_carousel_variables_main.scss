@@ -4,9 +4,14 @@ $btn_height: 7px;
 $btn_width: 50px;
 $btn_background: #666;
 $btn_border_radius: $btn_height/2;
-$btn_opacity: 1;
+$btn_opacity: .5;
 $btn_marg_top_down: 0px;
 $btn_marg_left_right: 3px;
+$btn_transition: .8s;
+$btn_hover_bg: #fff;
+$btn_hover_opacity: 1;
+$btn_height: $btn_height;
+
 
 $img_border_radius: 3px;
 $img_margin_left_right: 0px;

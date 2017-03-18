@@ -36,6 +36,13 @@
     background: $btn_background;
     opacity: $btn_opacity;
     border-radius: $btn_border_radius;
+    transition: $btn_transition;
+    &:hover{
+        background: $btn_hover_bg;
+        opacity: $btn_hover_opacity;
+        //width: $btn_height;
+        box-shadow: 1px;
+      }
     }
   }
 }
