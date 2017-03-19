@@ -20,7 +20,7 @@
         .carusel .crsl_cont .crsl_list li img {
           border-radius: 3px;
           margin: 0px 0px;
-          width: 650px; }
+          width: 100%; }
   .carusel .crsl_nav {
     display: flex;
     justify-content: center; }
@@ -33,7 +33,7 @@
       border-radius: 3.5px;
       transition: 0.8s; }
       .carusel .crsl_nav #btn_nav:hover {
-        background: #fff;
+        background: #888;
         opacity: 1;
         box-shadow: 1px; }
 
