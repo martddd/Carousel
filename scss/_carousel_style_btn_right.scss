@@ -1,5 +1,5 @@
 .carusel {
-  padding: 5px 0;
+  padding: $carusel_padding;
   background: $carusel_bg;
   width: 100%;
   margin: 0 auto;
@@ -48,7 +48,7 @@
       margin-bottom: $btn_margin_bottom;
     }
     .btn_numb{
-      margin: 1px 0px;
+      margin: 3px 0px;
       width: $btn_width;
       height: $btn_width;
     }
