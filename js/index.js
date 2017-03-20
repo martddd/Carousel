@@ -115,7 +115,7 @@ var
     crsl_li_show_opacity = function(){
       if(list_li.eq(j).is(':visible')){
         console.log(j);
-        list_li.eq(j).animate({opacity:1},sec,fun_hide_opacity);
+        list_li.eq(j).animate({opacity:0},sec,fun_hide_opacity);
         i = list_li.eq(j).index();
       }
       console.log("- "+$(this).index()+" -");
