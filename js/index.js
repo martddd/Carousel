@@ -37,8 +37,7 @@ var
       
     fun_show_opacity = function(){
       $(this).animate({opacity:1});//конечное положение анимации
-      $(this).show();
-    },
+      $(this).show();},
     fun_hide_opacity = function(){
       $(this).animate({opacity:0});//конечное положение анимации
       $(this).hide();},
@@ -46,8 +45,7 @@ var
     crsl_img_size = function(){
       $(".crsl_list>li>img").css("height",img_h);
       console.log('|w:'+w+' | h:'+img_h+"|");
-      console.log('-'.repeat(20));
-    },
+      console.log('-'.repeat(20));},
     
     crsl_li_show_left = function(){
       console.log("#".repeat(30));
@@ -67,8 +65,7 @@ var
         console.log("#".repeat(30));
         i=0;
         step_id++;
-         }
-    },
+         }},
     
     crsl_li_show_right = function(){
       if(i==0){
@@ -84,15 +81,11 @@ var
         list_li.eq(j).animate({opacity:0,left:-100},sec,fun_show_right);
         j--;
         i--;
-      }
-    },
+      }},
     
     
     crsl_create_btn = function(){
-      crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');
-      
-      
-    },
+      crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');},
     
     crsl_init = function(){
       var img_mass = new Array();
@@ -118,7 +111,7 @@ var
         i = list_li.eq(j).index();
       }
       console.log("- "+$(this).index()+" -");
-      list_li.eq($(this).index()-1).animate({opacity:1},sec,fun_show_opacity);
+      list_li.eq($(this).index()-1).animate({opacity:0},sec,fun_show_opacity);//положение из которого начинается анимация 
       j = list_li.eq($(this).index()-1).index();
       console.log(j);
     };
