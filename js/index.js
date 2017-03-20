@@ -90,7 +90,7 @@ var
     
     crsl_create_btn = function(){
       crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');
-      // $(".crsl_nav").on('mouseup', '.btn_numb_1', crsl_li_show_opacity);
+      
       
     },
     
@@ -98,7 +98,6 @@ var
       var img_mass = new Array();
       for(a=0;a<img_col;a++){
         img_mass.push($(".crsl_list>li")[a]);
-        // console.log(img_mass[a]);
         crsl_create_btn();
       };
       console.log("Массив элементов карусели");
@@ -119,7 +118,6 @@ var
         i = list_li.eq(j).index();
       }
       console.log("- "+$(this).index()+" -");
-      
       list_li.eq($(this).index()-1).animate({opacity:1},sec,fun_show_opacity);
       j = list_li.eq($(this).index()-1).index();
       console.log(j);
