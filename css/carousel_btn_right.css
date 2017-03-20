@@ -1,5 +1,5 @@
 .carusel {
-  padding: 5px 0;
+  padding: 0px;
   background: #eee;
   width: 100%;
   margin: 0 auto;
@@ -41,7 +41,7 @@
       width: 7px;
       margin-bottom: 10px; }
     .carusel .crsl_nav .btn_numb {
-      margin: 1px 0px;
+      margin: 3px 0px;
       width: 7px;
       height: 7px; }
     .carusel .crsl_nav .btn_right {
