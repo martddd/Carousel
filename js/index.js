@@ -8,7 +8,7 @@ var
     crsl_img_size = function(){
       img.css("height",img_h);
     },
-    
+
     step_id = 0,
     i = 0,
     j = 0,
@@ -17,6 +17,8 @@ var
     crsl_list = $(".crsl_list"),
     list_li = $(".crsl_list>li"),
     
+    link_style = $('link'),
+
     btn_left = $("#btn_nav.btn_left"),
     btn_numb = $("#btn_nav.btn_numb"),
     crsl_nav = $(".in"),
@@ -88,11 +90,28 @@ var
       crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');},
     
     crsl_init = function(){
-      var img_mass = new Array();
-      for(a=0;a<img_col;a++){
-        img_mass.push($(".crsl_list>li")[a]);
-        crsl_create_btn();
+      var img_mass = new Array(), flag_stule = false;
+      
+      //console.log(link_style); 
+      for(q=0;q<link_style.length;q++){
+        console.log(link_style[q].href);
+        str = link_style[q].href;
+        if(str.search(/carousel_main\.css/)>=0){
+          console.log(q+" - "+str);
+          crsl_nav.after('<div id="btn_nav" class="btn_left"></div>'+
+            '<div id="btn_nav" class="btn_right"></div>');
+          flag_stule = true;
+        }
+      }
+
+      if(flag_stule!=true){
+        console.log(flag_stule);
+        for(a=0;a<img_col;a++){
+            img_mass.push($(".crsl_list>li")[a]);
+            crsl_create_btn();
+          };
       };
+      
       console.log("Массив элементов карусели");
       console.log(img_mass);
       console.log("-".repeat(20));
@@ -102,6 +121,8 @@ var
       $(".crsl_nav>.btn_numb").click(crsl_li_show_opacity);
       $(".crsl_list>li").hide();
       $(".crsl_list>li:first-child").show();
+      $(".btn_left").mouseup(crsl_li_show_left);
+      $(".btn_right").mouseup(crsl_li_show_right);
     },
     
     crsl_li_show_opacity = function(){
@@ -119,5 +140,3 @@ var
 
 $(document).ready(crsl_init);
 
-$(".btn_left").mouseup(crsl_li_show_left);
-$(".btn_right").mouseup(crsl_li_show_right);
