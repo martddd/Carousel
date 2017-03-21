@@ -105,7 +105,6 @@ var
           flag_stule = true;
         }
       }
-
       if(flag_stule!=true){
         console.log(flag_stule);
         for(a=0;a<img_col;a++){
@@ -140,8 +139,11 @@ var
       list_li.eq($(this).index()-1).animate({opacity:0},sec,fun_show_opacity);//положение из которого начинается анимация 
       j = list_li.eq($(this).index()-1).index();
       $(".crsl_nav>.btn_numb").eq(j).off();
+      $(".crsl_nav>.btn_numb").eq(j).css("opacity",1);
       console.log('Предыдущая кнопка - '+old_btn);
       $(".crsl_nav>.btn_numb").eq(old_btn).on('click',crsl_li_show_opacity);
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("background","#ccc");
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",0.5);
       old_btn = j;
       console.log('j='+j);
     };
