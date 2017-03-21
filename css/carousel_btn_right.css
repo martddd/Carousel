@@ -28,8 +28,8 @@
     flex-direction: column;
     left: -15px; }
     .carusel .crsl_nav #btn_nav {
-      background: #aaa;
-      opacity: 0.5;
+      background: #ccc;
+      opacity: 0.4;
       border-radius: 12.5px;
       transition: 0.5s; }
       .carusel .crsl_nav #btn_nav:hover {

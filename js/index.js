@@ -93,7 +93,6 @@ var
     
     crsl_init = function(){
       var img_mass = new Array(), flag_stule = false;
-      
       //console.log(link_style); 
       for(q=0;q<link_style.length;q++){
         console.log(link_style[q].href);
@@ -112,14 +111,12 @@ var
             crsl_create_btn();
           };
       };
-      
       console.log("Массив элементов карусели");
       console.log(img_mass);
       console.log("-".repeat(20));
       console.log('Элементов в каруселе - '+img_col);
-      
       crsl_img_size();
-
+      
       $(".crsl_nav>.btn_numb").on('click',crsl_li_show_opacity);
       $(".crsl_list>li").hide();
       $(".crsl_list>li:first-child").show();
@@ -140,10 +137,11 @@ var
       j = list_li.eq($(this).index()-1).index();
       $(".crsl_nav>.btn_numb").eq(j).off();
       $(".crsl_nav>.btn_numb").eq(j).css("opacity",1);
+      $(".crsl_nav>.btn_numb").eq(j).css("background","#ccc");
       console.log('Предыдущая кнопка - '+old_btn);
       $(".crsl_nav>.btn_numb").eq(old_btn).on('click',crsl_li_show_opacity);
       $(".crsl_nav>.btn_numb").eq(old_btn).css("background","#ccc");
-      $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",0.5);
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",0.4);
       old_btn = j;
       console.log('j='+j);
     };
