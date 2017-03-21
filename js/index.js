@@ -25,6 +25,8 @@ var
     btn_numb = $(".crsl_nav>.btn_numb"),
     crsl_nav = $(".in"),
     
+    // Функции анимации
+    //##########################################
     fun_show_left = function(){
         $(this).animate({opacity:1,left:0});//конечное положение анимации
         $(this).show();},
@@ -38,7 +40,7 @@ var
     fun_hide_right = function(){
       $(this).animate({opacity:0});//конечное положение анимации
       $(this).hide();},
-      
+
     fun_show_opacity = function(){
       $(this).animate({opacity:1});//конечное положение анимации
       $(this).show();},
@@ -86,11 +88,16 @@ var
         j--;
         i--;
       }},
+    //##########################################
     
-    
+    // Функция создания кнопок
+    //##########################################
     crsl_create_btn = function(){
       crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');},
+    //##########################################
     
+    // Функция инициализации карусели
+    //##########################################
     crsl_init = function(){
       var img_mass = new Array(), flag_stule = false;
       //console.log(link_style); 
@@ -129,7 +136,10 @@ var
       
       $(".crsl_nav>.btn_numb").eq(j).off();
     },
+    //##########################################
     
+    // Функция анимации появления элементов
+    //##########################################
     crsl_li_show_opacity = function(){
 
       if(list_li.eq(j).is(':visible')){
@@ -151,7 +161,6 @@ var
       old_btn = j;
       console.log('j='+j);
     };
-
+    //##########################################
 
 $(document).ready(crsl_init);
-
