@@ -9,6 +9,8 @@ var
       img.css("height",img_h);
     },
 
+
+    old_btn = 0,
     step_id = 0,
     i = 0,
     j = 0,
@@ -20,7 +22,7 @@ var
     link_style = $('link'),
 
     btn_left = $("#btn_nav.btn_left"),
-    btn_numb = $("#btn_nav.btn_numb"),
+    btn_numb = $(".crsl_nav>.btn_numb"),
     crsl_nav = $(".in"),
     
     fun_show_left = function(){
@@ -91,7 +93,6 @@ var
     
     crsl_init = function(){
       var img_mass = new Array(), flag_stule = false;
-      
       //console.log(link_style); 
       for(q=0;q<link_style.length;q++){
         console.log(link_style[q].href);
@@ -103,7 +104,6 @@ var
           flag_stule = true;
         }
       }
-
       if(flag_stule!=true){
         console.log(flag_stule);
         for(a=0;a<img_col;a++){
@@ -111,30 +111,45 @@ var
             crsl_create_btn();
           };
       };
-      
       console.log("Массив элементов карусели");
       console.log(img_mass);
       console.log("-".repeat(20));
       console.log('Элементов в каруселе - '+img_col);
-      
       crsl_img_size();
-      $(".crsl_nav>.btn_numb").click(crsl_li_show_opacity);
+      
+      
+      $(".crsl_nav>.btn_numb").eq(j).css("opacity",1);
+      $(".crsl_nav>.btn_numb").eq(j).css("background",$("#btn_nav").css("background"));
+      
+      $(".crsl_nav>.btn_numb").on('click',crsl_li_show_opacity);
       $(".crsl_list>li").hide();
       $(".crsl_list>li:first-child").show();
       $(".btn_left").mouseup(crsl_li_show_left);
       $(".btn_right").mouseup(crsl_li_show_right);
+      
+      $(".crsl_nav>.btn_numb").eq(j).off();
     },
     
     crsl_li_show_opacity = function(){
+
       if(list_li.eq(j).is(':visible')){
         console.log(j);
         list_li.eq(j).animate({opacity:0},sec,fun_hide_opacity);
         i = list_li.eq(j).index();
       }
-      console.log("- "+$(this).index()+" -");
+      
+      console.log("Показываем - "+$(this).index()+" элемент");
       list_li.eq($(this).index()-1).animate({opacity:0},sec,fun_show_opacity);//положение из которого начинается анимация 
       j = list_li.eq($(this).index()-1).index();
-      console.log(j);
+      $(".crsl_nav>.btn_numb").eq(j).off();
+      $(".crsl_nav>.btn_numb").eq(j).css("opacity",1);
+      $(".crsl_nav>.btn_numb").eq(j).css("background",$("#btn_nav").css("background"));
+      console.log('Предыдущая кнопка - '+old_btn);
+      $(".crsl_nav>.btn_numb").eq(old_btn).on('click',crsl_li_show_opacity);
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("background",$("#btn_nav").css("background"));
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",0.4);
+      old_btn = j;
+      console.log('j='+j);
     };
 
 
