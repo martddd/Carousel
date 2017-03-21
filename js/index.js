@@ -117,11 +117,17 @@ var
       console.log('Элементов в каруселе - '+img_col);
       crsl_img_size();
       
+      
+      $(".crsl_nav>.btn_numb").eq(j).css("opacity",1);
+      $(".crsl_nav>.btn_numb").eq(j).css("background",$("#btn_nav").css("background"));
+      
       $(".crsl_nav>.btn_numb").on('click',crsl_li_show_opacity);
       $(".crsl_list>li").hide();
       $(".crsl_list>li:first-child").show();
       $(".btn_left").mouseup(crsl_li_show_left);
       $(".btn_right").mouseup(crsl_li_show_right);
+      
+      $(".crsl_nav>.btn_numb").eq(j).off();
     },
     
     crsl_li_show_opacity = function(){
