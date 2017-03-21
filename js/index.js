@@ -137,10 +137,10 @@ var
       j = list_li.eq($(this).index()-1).index();
       $(".crsl_nav>.btn_numb").eq(j).off();
       $(".crsl_nav>.btn_numb").eq(j).css("opacity",1);
-      $(".crsl_nav>.btn_numb").eq(j).css("background","#ccc");
+      $(".crsl_nav>.btn_numb").eq(j).css("background",$("#btn_nav").css("background"));
       console.log('Предыдущая кнопка - '+old_btn);
       $(".crsl_nav>.btn_numb").eq(old_btn).on('click',crsl_li_show_opacity);
-      $(".crsl_nav>.btn_numb").eq(old_btn).css("background","#ccc");
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("background",$("#btn_nav").css("background"));
       $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",$(".crsl_nav>.btn_numb").css("opacity"));
       old_btn = j;
       console.log('j='+j);
