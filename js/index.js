@@ -141,7 +141,7 @@ var
       console.log('Предыдущая кнопка - '+old_btn);
       $(".crsl_nav>.btn_numb").eq(old_btn).on('click',crsl_li_show_opacity);
       $(".crsl_nav>.btn_numb").eq(old_btn).css("background","#ccc");
-      $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",0.4);
+      $(".crsl_nav>.btn_numb").eq(old_btn).css("opacity",$(".crsl_nav>.btn_numb").css("opacity"));
       old_btn = j;
       console.log('j='+j);
     };
