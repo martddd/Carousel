@@ -16,7 +16,8 @@
       justify-content: center; }
       .carusel .crsl_cont .crsl_list li {
         position: relative;
-        display: inline; }
+        display: inline;
+        margin: 0 1px; }
         .carusel .crsl_cont .crsl_list li img {
           border-radius: 3px;
           margin: 0px 0px;
