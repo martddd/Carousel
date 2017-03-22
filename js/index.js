@@ -160,5 +160,9 @@ var
       console.log('j='+j);
     };
     //##########################################
+    
+    crsl_init_new = function(){
+      
+    };
 
 $(document).ready(crsl_init);
