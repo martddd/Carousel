@@ -181,7 +181,8 @@ var
       $('.buff_right').css('display','block');
       $('.buff_left').css({
         'background':'linear-gradient(to left, rgb(255,255,255,0), rgba(255,255,255)), url("'+img[a-1].src+'")',
-        'background-size':'cover'
+        'background-size':'cover',
+        'border-radius':'3px'
       });
       $('.buff_right').css({
         'background':'linear-gradient(to left, rgb(255,255,255), rgba(255,255,255,0)), url("'+img[now_show+1].src+'")',

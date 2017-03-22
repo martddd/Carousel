@@ -17,11 +17,11 @@
       li{
         position: relative;
         display: inline;
-        margin-bottom: -4px;
         img{
           border-radius: $img_border_radius;
           margin: $img_margin_top_bottom $img_margin_left_right;
           width: $img_width;
+          height: 100%;
         }
       }
       #buff{
