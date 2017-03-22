@@ -162,7 +162,13 @@ var
     //##########################################
     
     crsl_init_new = function(){
-      
+      console.log("Инициализация новой карусели");
+      var img_mass = new Array;
+      for(a=0;a<img_col;a++){
+        img_mass.push($(".crsl_list>li")[a]);
+        // crsl_create_btn();
+      };
+      console.log(img_mass);
     };
 
-$(document).ready(crsl_init);
+$(document).ready(crsl_init_new);
