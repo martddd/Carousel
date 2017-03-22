@@ -2,7 +2,7 @@ var
     img = $(".crsl_list>li>img"),
     w = $(".carusel").parent().width(),
     h_16 = Math.round(w/16),
-    img_w = w-100,
+    img_w = w,
     img_h = h_16*9,
     crsl_img_size = function(){
       img.css("height",img_h);
@@ -164,6 +164,7 @@ var
     crsl_init_new = function(){
       var now_show = 0;
       console.info("Инициализация новой карусели");
+      console.log(img_w,img_h);
       var img_mass = new Array;
       for(a=0;a<img_col;a++){
         img_mass.push($(".crsl_list>li")[a]);
