@@ -1,19 +1,17 @@
 var 
     img = $(".crsl_list>li>img"),
     w = $(".carusel").parent().width(),
+    h = $(".carusel").parent().height(),
     h_16 = Math.round(w/16),
     img_w = w,
     img_h = h_16*9,
-    crsl_img_size = function(){
-      img.css("height",img_h);
-    },
 
     old_btn = 0,
     step_id = 0,
     i = 0,
     j = 0,
     sec = 500,
-    img_col = $("img").length,
+    img_col = img.length,
     crsl_list = $(".crsl_list"),
     list_li = $(".crsl_list>li"),
     
@@ -47,7 +45,7 @@ var
       $(this).hide();},
     
     crsl_img_size = function(){
-      $(".crsl_list>li>img").css("height",img_h);
+      $(".crsl_list>li>img").css("height",h);
       console.log('|w:'+w+' | h:'+img_h+"|");
       console.log('-'.repeat(20));},
     
@@ -164,7 +162,7 @@ var
     crsl_init_new = function(){
       var now_show = 0;
       console.info("Инициализация новой карусели");
-      console.log(img_w,img_h);
+      console.log(w,h);
       var img_mass = new Array;
       for(a=0;a<img_col;a++){
         img_mass.push($(".crsl_list>li")[a]);

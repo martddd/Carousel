@@ -16,11 +16,14 @@
       justify-content: center; }
       .carusel .crsl_cont .crsl_list li {
         position: relative;
-        display: inline; }
+        display: inline;
+        margin-bottom: -4px; }
         .carusel .crsl_cont .crsl_list li img {
           border-radius: 3px;
           margin: 0px 0px;
-          width: 650px; }
+          width: 100%; }
+      .carusel .crsl_cont .crsl_list #buff {
+        height: 100%; }
   .carusel .crsl_nav {
     display: flex;
     justify-content: center;
