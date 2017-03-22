@@ -1,6 +1,5 @@
 var 
     img = $(".crsl_list>li>img"),
-    //w = img.width(),
     w = $(".carusel").parent().width(),
     h_16 = w/16,
     img_w = w,
@@ -8,7 +7,6 @@ var
     crsl_img_size = function(){
       img.css("height",img_h);
     },
-
 
     old_btn = 0,
     step_id = 0,
