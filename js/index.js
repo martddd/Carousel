@@ -1,8 +1,8 @@
 var 
     img = $(".crsl_list>li>img"),
     w = $(".carusel").parent().width(),
-    h_16 = w/16,
-    img_w = w,
+    h_16 = Math.round(w/16),
+    img_w = w-100,
     img_h = h_16*9,
     crsl_img_size = function(){
       img.css("height",img_h);
@@ -162,17 +162,33 @@ var
     //##########################################
     
     crsl_init_new = function(){
+      var now_show = 0;
       console.info("Инициализация новой карусели");
       var img_mass = new Array;
       for(a=0;a<img_col;a++){
         img_mass.push($(".crsl_list>li")[a]);
         // crsl_create_btn();
       };
+      
       console.log('Массив элементов \n');
       console.dir(img_mass);
       list_li.css("display","none");
       console.info("Скрытие карусели");
-      list_li.eq(0).css("display","block");
+      
+      $('.buff_left').css('width',w*0.1);
+      $('.buff_left').css('display','block');
+      list_li.eq(1).css("display","block");
+      $('.buff_right').css('width',w*0.1);
+      $('.buff_right').css('display','block');
+      $('.buff_left').css({
+        'background':'linear-gradient(to left, rgb(255,255,255,0), rgba(255,255,255)), url("'+img[a-1].src+'")',
+        'background-size':'cover'
+      });
+      $('.buff_right').css({
+        'background':'linear-gradient(to left, rgb(255,255,255), rgba(255,255,255,0)), url("'+img[now_show+1].src+'")',
+        'background-size':'cover'
+      });
+      
     };
 
 $(document).ready(crsl_init_new);
