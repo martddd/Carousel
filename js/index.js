@@ -88,8 +88,17 @@ var
     
     // Функция создания кнопок
     //##########################################
-    crsl_create_btn = function(){
-      crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');},
+    crsl_create_btn = function(trig){
+      if(trig){
+        crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');
+      }else{
+        crsl_nav.after('<div id="btn_nav" class="btn_numb"></div>');
+        $('.carusel').css('flex-direction','column');
+        $('.crsl_nav').css({'flex-direction':'row','left':0,'top':-15});
+        $('.btn_numb').css('margin','0px 3px');
+      }
+      
+      },
     //##########################################
     
     // Функция инициализации карусели
@@ -166,7 +175,7 @@ var
       var img_mass = new Array;
       for(a=0;a<img_col;a++){
         img_mass.push($(".crsl_list>li")[a]);
-        // crsl_create_btn();
+        crsl_create_btn();
       };
       
       console.log('Массив элементов \n');
@@ -187,6 +196,7 @@ var
         'background':'linear-gradient(to right, rgb(255,255,255,0), rgba(255,255,255)), url("'+img[now_show+1].src+'")',
         'background-size':'cover'
       });
+      
       
     };
 
