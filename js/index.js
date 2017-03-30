@@ -169,7 +169,7 @@ var
     //##########################################
     
     crsl_init_new = function(){
-      var now_show = 0;
+      var now_show = 0, img_show = 0, img_hide = 0;
       console.info("Инициализация новой карусели");
       console.log(w,h);
       var img_mass = new Array;
@@ -197,6 +197,8 @@ var
         'background-size':'cover'
       });
       
+      $(".crsl_nav>.btn_numb").eq(img_show).on('click',crsl_li_show_opacity);
+      $(".buff_left").css('background',img[1].src);
       
     };
 
