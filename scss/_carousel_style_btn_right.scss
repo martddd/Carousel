@@ -31,7 +31,8 @@
     justify-content: center;
     position: relative;
     flex-direction: row; //<----
-    left: 0; //<----
+    left: $crsl_nav_left; //<----
+    top: $crsl_nav_top;
     #btn_nav {
       background: $btn_background;
       opacity: $btn_opacity;
