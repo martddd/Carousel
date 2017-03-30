@@ -21,6 +21,7 @@
           border-radius: $img_border_radius;
           margin: $img_margin_top_bottom $img_margin_left_right;
           width: $img_width;
+          height: 100%;
         }
       }
     }
@@ -48,7 +49,7 @@
       margin-bottom: $btn_margin_bottom;
     }
     .btn_numb{
-      margin: 3px 0px;
+      margin: $btn_numb_margin_top $btn_numb_margin_left;
       width: $btn_width;
       height: $btn_width;
     }

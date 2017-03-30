@@ -1,8 +1,8 @@
 var 
     img = $(".crsl_list>li>img"),
-    //w = img.width(),
     w = $(".carusel").parent().width(),
-    h_16 = w/16,
+    h = $(".carusel").parent().height(),
+    h_16 = Math.round(w/16),
     img_w = w,
     img_h = h_16*9,
     crsl_img_size = function(){
@@ -49,7 +49,7 @@ var
       $(this).hide();},
     
     crsl_img_size = function(){
-      $(".crsl_list>li>img").css("height",img_h);
+      $(".crsl_list>li>img").css("height",'100%');
       console.log('|w:'+w+' | h:'+img_h+"|");
       console.log('-'.repeat(20));},
     
